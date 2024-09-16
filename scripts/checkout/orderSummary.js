@@ -2,6 +2,7 @@ import {cart, removeFromCart, cartQuantity, updateDeliveryId, updateQuantity} fr
 import {products} from '../../data/products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions} from '../../data/deliveryOptions.js';
+import { renderPaymentSummary } from './paymentSummary.js';
  
 export function renderOrderSummary(){
     let orderSummaryHTML=``;
@@ -166,4 +167,5 @@ export function renderOrderSummary(){
             renderOrderSummary();
         });
     });
+    renderPaymentSummary();
 }
