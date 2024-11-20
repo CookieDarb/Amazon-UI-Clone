@@ -8,6 +8,26 @@ export function getPrice(productId){
   return price;
 }
 
+class Product{
+  id;
+  name;
+  image;
+  rating;
+  price;
+  keywords;
+
+  constructor(productx){
+    this.id=productx.id;
+    this.name=productx.name;
+    this.image=productx.image;
+    this.rating=productx.rating;
+    this.price=productx.price;
+    this.keywords=productx.keywords;
+  }
+
+}
+
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -667,4 +687,6 @@ export const products = [
       "mens"
     ]
   }
-];
+].map((productx)=>{
+  return new Product(productx);
+});
