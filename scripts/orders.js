@@ -3,6 +3,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { formatMoney } from "./utils/money.js";
 import { getImage,getName } from "../data/products.js";
 import { cartQuantity } from "../data/cart.js";
+import { addToCart } from "../data/cart.js";
 
 function renderOrderDetails(order){
     let orderDetailHTML=``;
@@ -37,7 +38,7 @@ function renderOrderDetails(order){
                 <div class="product-quantity">
                 Quantity: ${quantity}
                 </div>
-                <button class="buy-again-button button-primary">
+                <button class="buy-again-button button-primary js-buy-again-button" data-product-quantity="${quantity}" data-product-id="${prodID}">
                 <img class="buy-again-icon" src="images/icons/buy-again.png">
                 <span class="buy-again-message">Buy it again</span>
                 </button>
@@ -45,7 +46,7 @@ function renderOrderDetails(order){
 
             <div class="product-actions">
                 <a href="tracking.html">
-                <button class="track-package-button button-secondary">
+                <button class="track-package-button button-secondary js-track-button">
                     Track package
                 </button>
                 </a>
@@ -113,6 +114,16 @@ function renderOrderHistory(){
     }
 
     checkoutHeader(cartQuantity());
+
+    //adding buy again functionality
+    document.querySelectorAll(".js-buy-again-button").forEach((button)=>{
+        button.addEventListener('click',()=>{
+            let quantity=parseInt(button.dataset.productQuantity);
+            let prodId=button.dataset.productId;
+            addToCart(prodId,quantity);
+            window.location.href="checkout.html";
+        });
+    });
 }
 
 
