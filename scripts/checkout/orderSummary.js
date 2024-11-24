@@ -168,4 +168,5 @@ export function renderOrderSummary(){
         });
     });
     renderPaymentSummary();
+    console.log(cart);
 }

@@ -8,6 +8,25 @@ export function getPrice(productId){
   return price;
 }
 
+export function getName(productId){
+  let name;
+  products.forEach(product=>{
+    if(product.id===productId){
+      name=product.name;
+    }
+  });
+  return name;
+}
+
+export function getImage(productId){
+  let image;
+  products.forEach(product=>{
+    if(product.id===productId){
+      image=product.image;
+    }
+  });
+  return image;
+}
 class Product{
   id;
   name;
