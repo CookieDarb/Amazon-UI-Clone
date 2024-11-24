@@ -45,7 +45,7 @@ function renderOrderDetails(order){
             </div>
 
             <div class="product-actions">
-                <a href="tracking.html">
+                <a href="tracking.html?orderId=${order.id}&productId=${prodID}">
                 <button class="track-package-button button-secondary js-track-button">
                     Track package
                 </button>
