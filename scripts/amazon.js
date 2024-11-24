@@ -2,12 +2,30 @@ import {cart, addToCart, cartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import { formatMoney } from './utils/money.js';
 
-// loadProducts(loadHomeGrid);
+function filterBySearch(product,searchText){
+  
+  searchText=searchText.toLowerCase();
+  const productName=(product.name).toLowerCase();
+  if(productName.includes(searchText)){
+    return true;
+  }
+  const keywords=product.keywords;
+  return keywords.some(keyword=>{
+      return keyword.includes(searchText) || searchText.includes(keyword);
+  });
+}
 
-function loadHomeGrid(){ 
+function loadHomeGrid(){
+  
+  const url=new URL(window.location.href);
+  const searchText=url.searchParams.get('search')||""; 
+
   let productHTML="";
 
   products.forEach(product=>{
+
+    if(filterBySearch(product,searchText)){
+
       productHTML+=`
       <div class="product-container">
             <div class="product-image-container">
@@ -59,6 +77,7 @@ function loadHomeGrid(){
             </button>
           </div>
       `;
+    }
   });
 
   //adding HTML to code using DOM
@@ -102,6 +121,12 @@ function loadHomeGrid(){
       displayAddedText(productId,addedTimer);    
     });
   });
+
+  document.querySelector('.js-search-button').addEventListener("click",()=>{
+    let searchText=document.querySelector('.js-search-bar').value;
+    window.location.href=`amazon.html?search=${searchText}`;
+  })
+
 }
 
 loadHomeGrid();
