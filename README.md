@@ -4,6 +4,36 @@ This repository contains a fully functional Amazon-like e-commerce application t
 
 Link : https://cookiedarb.github.io/Amazon-UI-Clone/amazon.html
 
+## Screenshot
+
+<details>
+  <summary>Home</summary>
+  
+  ![image](https://github.com/user-attachments/assets/9fde0fb4-3c3f-4bac-b378-b083cb0f2117)
+  
+</details>
+<details>
+  <summary>Cart</summary>
+  
+  ![image](https://github.com/user-attachments/assets/d570ae2b-ad8b-4f3d-9345-835b5260a828)
+  
+</details>
+<details>
+  <summary>Returns & Order</summary>
+  
+  ![image](https://github.com/user-attachments/assets/079127d1-93cd-4d81-829d-537289348d91)
+
+  
+</details>
+<details>
+  <summary>Tracking</summary>
+  
+  ![image](https://github.com/user-attachments/assets/86054cfe-43dd-4eb2-a615-083208a1f373)
+
+  
+</details>
+
+
 ---
 
 ## Features
