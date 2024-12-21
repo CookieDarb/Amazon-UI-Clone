@@ -2,7 +2,7 @@
 
 This repository contains a fully functional Amazon-like e-commerce application that replicates essential features of an online shopping platform. While it does not include advanced functionalities like payment gateways or user registration, it provides a solid foundation for understanding e-commerce platforms through dynamic HTML, robust JavaScript, and CSS styling.
 
-Link : https://cookiedarb.github.io/Amazon-UI-Clone/
+Link : https://cookiedarb.github.io/Amazon-UI-Clone/amazon.html
 
 ---
 
